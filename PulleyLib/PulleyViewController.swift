@@ -158,7 +158,7 @@ open class PulleyViewController: UIViewController {
     public let bounceOverflowMargin: CGFloat = 20.0
 
     /// The current content view controller (shown behind the drawer).
-    public fileprivate(set) var primaryContentViewController: UIViewController! {
+    @objc public fileprivate(set) var primaryContentViewController: UIViewController! {
         willSet {
             
             guard let controller = primaryContentViewController else {
@@ -228,14 +228,14 @@ open class PulleyViewController: UIViewController {
     }
     
     /// Get the current bottom safe area for Pulley. This is a convenience accessor. Most delegate methods where you'd need it will deliver it as a parameter.
-    public var bottomSafeSpace: CGFloat {
+    @objc public var bottomSafeSpace: CGFloat {
         get {
             return getBottomSafeArea()
         }
     }
     
     /// The content view controller and drawer controller can receive delegate events already. This lets another object observe the changes, if needed.
-    public weak var delegate: PulleyDelegate?
+    @objc public weak var delegate: PulleyDelegate?
     
     /// The current position of the drawer.
     public fileprivate(set) var drawerPosition: PulleyPosition = .collapsed {
@@ -254,7 +254,7 @@ open class PulleyViewController: UIViewController {
     }
     
     /// The background visual effect layer for the drawer. By default this is the extraLight effect. You can change this if you want, or assign nil to remove it.
-    public var drawerBackgroundVisualEffectView: UIVisualEffectView? = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight)) {
+    @objc public var drawerBackgroundVisualEffectView: UIVisualEffectView? = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight)) {
         willSet {
             drawerBackgroundVisualEffectView?.removeFromSuperview()
         }
@@ -471,7 +471,7 @@ open class PulleyViewController: UIViewController {
      
      - returns: A newly created Pulley drawer.
      */
-    required public init(contentViewController: UIViewController, drawerViewController: UIViewController) {
+    @objc required public init(contentViewController: UIViewController, drawerViewController: UIViewController) {
         super.init(nibName: nil, bundle: nil)
         
         ({
