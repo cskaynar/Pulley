@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Pulley'
-  s.version          = '1.4'
+  s.version          = '2.2.0'
   s.summary          = 'A library to imitate the iOS 10 Maps UI.'
 
 # This description is used to generate tags and improve search results.
@@ -30,13 +30,13 @@ A library to provide a drawer controller that can imitate the drawer UI in iOS 1
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'PulleyLib/*.*'
+  s.source_files = 'PulleyLib/*.{h,swift}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
 
   s.xcconfig = {
-    'SWIFT_VERSION' => '3.1'
+    'SWIFT_VERSION' => '4.0'
   }
 
 end
