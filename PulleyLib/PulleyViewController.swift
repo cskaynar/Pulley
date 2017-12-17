@@ -238,7 +238,7 @@ open class PulleyViewController: UIViewController {
     @objc public weak var delegate: PulleyDelegate?
     
     /// The current position of the drawer.
-    public fileprivate(set) var drawerPosition: PulleyPosition = .collapsed {
+    @objc public fileprivate(set) var drawerPosition: PulleyPosition = .collapsed {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
         }
