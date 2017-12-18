@@ -137,10 +137,10 @@ open class PulleyViewController: UIViewController {
     // Interface Builder
     
     /// When using with Interface Builder only! Connect a containing view to this outlet.
-    @IBOutlet public var primaryContentContainerView: UIView!
+    @objc @IBOutlet public var primaryContentContainerView: UIView!
     
     /// When using with Interface Builder only! Connect a containing view to this outlet.
-    @IBOutlet public var drawerContentContainerView: UIView!
+    @objc @IBOutlet public var drawerContentContainerView: UIView!
     
     // Internal
     fileprivate let primaryContentContainer: UIView = UIView()
@@ -370,7 +370,7 @@ open class PulleyViewController: UIViewController {
     }
     
     /// The starting position for the drawer when it first loads
-    public var initialDrawerPosition: PulleyPosition = .collapsed
+    @objc public var initialDrawerPosition: PulleyPosition = .collapsed
     
     /// The display mode for Pulley. Default is 'automatic', which switches along the same rules as iOS's Maps app. The current display mode is available by using the 'currentDisplayMode' property.
     @objc public var displayMode: PulleyDisplayMode = .automatic {
