@@ -123,7 +123,7 @@ public typealias PulleyAnimationCompletionBlock = ((_ finished: Bool) -> Void)
 /// - leftSide: Show as a floating panel on the left
 /// - bottomDrawer: Show as a bottom drawer
 /// - automatic: Determine it based on device / orientation / size class (like Maps.app)
-public enum PulleyDisplayMode {
+@objc public enum PulleyDisplayMode: Int {
     case leftSide
     case bottomDrawer
     case automatic
@@ -373,7 +373,7 @@ open class PulleyViewController: UIViewController {
     public var initialDrawerPosition: PulleyPosition = .collapsed
     
     /// The display mode for Pulley. Default is 'automatic', which switches along the same rules as iOS's Maps app. The current display mode is available by using the 'currentDisplayMode' property.
-    public var displayMode: PulleyDisplayMode = .automatic {
+    @objc public var displayMode: PulleyDisplayMode = .automatic {
         didSet {
             if self.isViewLoaded
             {
