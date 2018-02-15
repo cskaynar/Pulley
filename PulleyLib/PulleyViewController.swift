@@ -155,7 +155,7 @@ open class PulleyViewController: UIViewController {
 
     // Public
     
-    public let bounceOverflowMargin: CGFloat = 20.0
+    @objc public let bounceOverflowMargin: CGFloat = 20.0
 
     /// The current content view controller (shown behind the drawer).
     @objc public fileprivate(set) var primaryContentViewController: UIViewController! {
@@ -193,7 +193,7 @@ open class PulleyViewController: UIViewController {
     }
     
     /// The current drawer view controller (shown in the drawer).
-    public fileprivate(set) var drawerContentViewController: UIViewController! {
+    @objc public fileprivate(set) var drawerContentViewController: UIViewController! {
         willSet {
 
             guard let controller = drawerContentViewController else {
@@ -245,7 +245,7 @@ open class PulleyViewController: UIViewController {
     }
 
     // The visible height of the drawer. Useful for adjusting the display of content in the main content view.
-    public var visibleDrawerHeight: CGFloat {
+    @objc public var visibleDrawerHeight: CGFloat {
         if drawerPosition == .closed {
             return 0.0
         } else {
